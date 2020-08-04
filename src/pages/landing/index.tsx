@@ -1,3 +1,5 @@
+import './styles.css'
+
 import React from 'react'
 
 import giveClassesIcon from '../../assets/icons/give-classes.svg'
@@ -7,9 +9,11 @@ import landingImg from '../../assets/images/landing.svg'
 import logoImg from '../../assets/images/logo.svg'
 
 
+
+
 function Landing() {
   return (
-    <div id="pageland">
+    <div id="page-landing">
       <div id="page-landing-content" className="container">
         <div className="logo-container">
           <img src={logoImg} alt="Proffy" />
