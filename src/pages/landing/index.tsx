@@ -11,6 +11,8 @@ import logoImg from '../../assets/images/logo.svg'
 
 
 
+
+
 function Landing() {
   return (
     <div id="page-landing">
@@ -30,8 +32,8 @@ function Landing() {
             Study
           </a>
           <a href="" className="give-classes">
-            <img src={giveClassesIcon} alt="study" />
-            Study
+            <img src={giveClassesIcon} alt="give classes" />
+            Give Classes
           </a>
         </div>
         <span className="total-connections">
