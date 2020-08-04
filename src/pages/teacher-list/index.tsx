@@ -6,15 +6,11 @@ import PageHeader from '../../components/page-header'
 
 
 
-
-
-
-
 function TeacherList() {
   return (
     <div id="page-teacher-list" className="container">
       <PageHeader title="These are the available Proffies" >
-        <form action="" id="search-teachers">
+        <form id="search-teachers">
           <div className="input-block">
             <label htmlFor="subject">Discipline</label>
             <input type="text" id="subject" />
