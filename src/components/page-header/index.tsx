@@ -1,6 +1,6 @@
 import './styles.css'
 
-import React from 'react'
+import React, { PropsWithChildren } from 'react'
 import { Link } from 'react-router-dom'
 
 import backIcon from '../../assets/icons/back.svg'
@@ -8,11 +8,13 @@ import logoImg from '../../assets/images/logo.svg'
 
 
 
-type PageHeaderProps = {
-  title: string
-}
 
-function PageHeader({title}: PageHeaderProps) {
+
+type PageHeaderProps = PropsWithChildren<{
+  title: string
+}>
+
+function PageHeader({ title, children }: PageHeaderProps) {
   return (
     <header className="page-header">
       <div className="top-bar-container">
@@ -23,6 +25,7 @@ function PageHeader({title}: PageHeaderProps) {
       </div>
       <div className="header-content">
         <strong>{title}</strong>
+        {children}
       </div>
     </header>
   )
