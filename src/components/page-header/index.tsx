@@ -12,9 +12,10 @@ import logoImg from '../../assets/images/logo.svg'
 
 type PageHeaderProps = PropsWithChildren<{
   title: string
+  description?: string
 }>
 
-function PageHeader({ title, children }: PageHeaderProps) {
+function PageHeader({ title, description, children }: PageHeaderProps) {
   return (
     <header className="page-header">
       <div className="top-bar-container">
@@ -25,6 +26,7 @@ function PageHeader({ title, children }: PageHeaderProps) {
       </div>
       <div className="header-content">
         <strong>{title}</strong>
+        {description && <p>{description}</p>}
         {children}
       </div>
     </header>
