@@ -1,6 +1,7 @@
-import './styles.css'
+import './styles.scss'
 
 import React, { TextareaHTMLAttributes } from 'react'
+
 
 
 
