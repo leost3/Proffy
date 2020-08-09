@@ -1,4 +1,4 @@
-import './styles.css'
+import './styles.scss'
 
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
@@ -9,6 +9,8 @@ import studyIcon from '../../assets/icons/study.svg'
 import landingImg from '../../assets/images/landing.svg'
 import logoImg from '../../assets/images/logo.svg'
 import api from '../../services/api'
+
+
 
 
 
