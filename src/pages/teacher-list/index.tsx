@@ -11,20 +11,6 @@ import api from '../../services/api'
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 function TeacherList() {
 
   const [inputState, setInputState] = useState({
@@ -43,7 +29,6 @@ function TeacherList() {
         ...inputState
       }
     })
-
     setTeachers(response.data)
   }
 

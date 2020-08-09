@@ -41,7 +41,6 @@ function TeacherForm() {
   }
 
   function onHandleChange(e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) {
-    console.log(e.target)
     setInputState({
       ...inputState,
       [e.target.id]: e.target.value
@@ -79,13 +78,25 @@ function TeacherForm() {
         <form onSubmit={onHandleCreateClass}>
           <fieldset>
             <legend>Your data</legend>
-            <Input name='name' label='name' value={inputState.name}
+            <Input
+              name='name'
+              label='name'
+              value={inputState.name}
               onChange={(e) => onHandleChange(e)} />
-            <Input name='avatar' label='Avatar' value={inputState.avatar}
+            <Input
+              name='avatar'
+              label='Avatar'
+              value={inputState.avatar}
               onChange={(e) => onHandleChange(e)} />
-            <Input name='whatsapp' label='Whatsapp' value={inputState.whatsapp}
+            <Input
+              name='whatsapp'
+              label='Whatsapp'
+              value={inputState.whatsapp}
               onChange={(e) => onHandleChange(e)} />
-            <Textarea name='bio' value={inputState.bio} label='Bio'
+            <Textarea
+              name='bio'
+              value={inputState.bio}
+              label='Bio'
               onChange={(e) => onHandleChange(e)} />
           </fieldset>
           <fieldset>
@@ -113,10 +124,11 @@ function TeacherForm() {
           </fieldset>
           <fieldset>
             <legend>
-              Available time slots
-              <button type='button' onClick={onNewScheduleItem}>+ New time slot</button>
+              <span>Available time slots</span>
+              <button type='button' onClick={onNewScheduleItem}>
+                <span>+ New time slot</span>
+              </button>
             </legend>
-
             {scheduledItems.map((scheduledItem, index) => {
               return (
                 <div key={`scheduledItem-${index}`} className="schedule-item">
@@ -153,15 +165,14 @@ function TeacherForm() {
                     onChange={e => setScheduleItemValue(index, 'to', e.target.value)}
                   />
                 </div>
-              )
-            })}
+            )})}
           </fieldset>
           <footer>
             <p>
               <img src={warningIcon} alt="important warning" />
-            Important! <br />
-            Fill all the fields
-          </p>
+              <span>Important!</span><br />
+              <span>Fill all the fields</span>
+            </p>
             <button type='submit'>Save</button>
           </footer>
         </form>
