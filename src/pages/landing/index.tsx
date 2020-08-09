@@ -1,6 +1,6 @@
 import './styles.css'
 
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 import giveClassesIcon from '../../assets/icons/give-classes.svg'
@@ -8,9 +8,19 @@ import purpleHeartIcon from '../../assets/icons/purple-heart.svg'
 import studyIcon from '../../assets/icons/study.svg'
 import landingImg from '../../assets/images/landing.svg'
 import logoImg from '../../assets/images/logo.svg'
+import api from '../../services/api'
+
 
 
 function Landing() {
+
+  const [totalConnections, setTotalConnections] = useState('nothing')
+
+  useEffect(() => {
+    api.get('connections').then(res => setTotalConnections(res.data.total))
+  }, [])
+
+
   return (
     <div id="page-landing">
       <div id="page-landing-content" className="container">
@@ -34,7 +44,7 @@ function Landing() {
           </Link>
         </div>
         <span className="total-connections">
-          Total of 200 connections <img src={purpleHeartIcon} alt="connections" />
+          Total of {totalConnections} connections <img src={purpleHeartIcon} alt="connections" />
         </span>
       </div>
     </div>
