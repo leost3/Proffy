@@ -12,6 +12,12 @@ import api from '../../services/api'
 
 
 
+
+
+
+
+
+
 function TeacherList() {
 
   const [inputState, setInputState] = useState({
@@ -34,13 +40,14 @@ function TeacherList() {
     setTeachers(response.data)
   }
 
+  // TODO: FETCH FROM BACKEND
   const teacher = {
     id: 1,
     avatar: "https://avatars2.githubusercontent.com/u/36447683?s=400&u=493d7bacc1f21021efde8da04230c81f2a015f09&v=4",
-    bio: "asdas",
+    bio: "Hello, I am goku",
     cost: 2,
-    name: "leo",
-    subject: "javascript",
+    name: "Leonardo Studart",
+    subject: "Javascript",
     whatsapp: 2
   }
 
@@ -88,7 +95,6 @@ function TeacherList() {
           <button type='submit'>
             Search
           </button>
-          {JSON.stringify(inputState)}
         </form>
       </PageHeader>
 
