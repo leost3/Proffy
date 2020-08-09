@@ -1,4 +1,4 @@
-import './styles.css'
+import './styles.scss'
 
 import React, { FormEvent, useState } from 'react'
 
@@ -7,6 +7,8 @@ import PageHeader from '../../components/page-header'
 import Select from '../../components/select'
 import TeacherItem, { TeacherType } from '../../components/TeacherItem'
 import api from '../../services/api'
+
+
 
 
 
