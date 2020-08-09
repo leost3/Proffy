@@ -1,4 +1,4 @@
-import './styles.css'
+import './styles.scss'
 
 import React, { FormEvent, useState } from 'react'
 import { useHistory } from 'react-router-dom'
@@ -11,10 +11,7 @@ import Textarea from '../../components/Textaera'
 import api from '../../services/api'
 
 
-
-
 function TeacherForm() {
-
 
   const history = useHistory()
   const [inputState, setInputState] = useState({
