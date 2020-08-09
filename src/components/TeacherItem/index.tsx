@@ -3,41 +3,58 @@ import './styles.css'
 import React from 'react'
 
 import whastappIcon from '../../assets/icons/whatsapp.svg'
+import api from '../../services/api'
 
 
+export type TeacherType = {
+  id:number,
+  avatar:string,
+  bio:string,
+  cost:number,
+  name:string,
+  subject:string,
+  whatsapp:number
+}
+interface TeacherItemProps {
+  teacher: TeacherType
+}
+
+function TeacherItem({teacher: {id, avatar, bio, cost, name, subject, whatsapp}}: TeacherItemProps) {
 
 
-function TeacherItem() {
+  function createNewConnection() {
+    api.post('connections', {
+      user_id: id
+    })
+  }
+  
+
   return (
     <article className="teacher-item">
       <header>
         <img
-          src="https://avatars2.githubusercontent.com/u/36447683?s=400&u=493d7bacc1f21021efde8da04230c81f2a015f09&v=4"
+          src={avatar}
           alt="Leo"
         />
 
         <div>
-          <strong>Leonardo Studart</strong>
-          <span>Javascript</span>
+          <strong>{name}</strong>
+          <span>{subject}</span>
         </div>
       </header>
       <p>
-        Software Engineer
-        <br /> <br />
-        Full Stack Developer 
-        <br /> <br />
-        In love with techonology
+        {bio}
       </p>
 
       <footer>
         <p>
           Price/hour
-          <strong>CAD 75,00</strong>
+          <strong>CAD {cost}</strong>
         </p>
-        <button type="button">
+        <a target="_blank" onClick={createNewConnection} href="https://wa.me/+15145743434">
           <img src={whastappIcon} alt="whatsapp" />
           Get in touch
-        </button>
+        </a>
       </footer>
     </article>
   );
