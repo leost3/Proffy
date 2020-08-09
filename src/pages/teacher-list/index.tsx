@@ -2,11 +2,18 @@ import './styles.scss'
 
 import React, { FormEvent, useState } from 'react'
 
+import { Button } from '../../components/button'
 import Input from '../../components/input'
 import PageHeader from '../../components/page-header'
 import Select from '../../components/select'
 import TeacherItem, { TeacherType } from '../../components/TeacherItem'
 import api from '../../services/api'
+
+
+
+
+
+
 
 
 
@@ -92,9 +99,7 @@ function TeacherList() {
             value={inputState.time}
           />
 
-          <button type='submit'>
-            Search
-          </button>
+          <Button type='submit'>Search</Button>
         </form>
       </PageHeader>
 
@@ -112,5 +117,6 @@ function TeacherList() {
     </div>
   )
 }
+
 
 export default TeacherList
